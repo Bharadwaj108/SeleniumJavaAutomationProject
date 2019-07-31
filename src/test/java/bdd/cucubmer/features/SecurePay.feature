@@ -8,5 +8,5 @@ Feature: ContactUs
     And Click on the link with the search link "https://www.securepay.com.au/" from the search results
     When Navigate to "ContactUs" page in the SecurePay website
     Then Contact Us Page is loaded
-    #Given I generate random Contact test data
-    #And Fill the Contact Details in the Contact Us form
+    Given I generate random Contact test data
+    And Fill the Contact Details in the Contact Us form
