@@ -3,12 +3,17 @@ package bdd.cucubmer.steps;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import org.testng.Assert;
+import pages.SecurePayContactUsPage;
+
+import static com.sample.framework.base.Base.CurrentPage;
 
 public class SecurePayContactUsSteps
 {
     @Then("^Contact Us Page is loaded$")
     public void ContactUsPageIsLoaded()
     {
+        Assert.assertTrue(CurrentPage.As(SecurePayContactUsPage.class).ISContactUsPageLoaded(),"Failed to load the Contact Us Page");
     }
 
     @Given("^I generate random Contact test data$")

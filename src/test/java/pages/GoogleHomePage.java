@@ -3,6 +3,7 @@ package pages;
 import com.sample.framework.base.BasePage;
 import com.sample.framework.base.DriverContext;
 import com.sample.framework.config.Settings;
+import com.sample.framework.utils.PageDelayUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -26,8 +27,8 @@ public class GoogleHomePage extends BasePage
             //Search the website
             txtSearch.sendKeys(searchString);
             txtSearch.sendKeys(Keys.ENTER);
-
-            Thread.sleep(5000);
+            PageDelayUtils.WaitObjectExists(10, By.id("resultStats"));
+            flag = true;
         }
         catch (Exception ex)
         {
@@ -42,6 +43,11 @@ public class GoogleHomePage extends BasePage
         try
         {
             WebElement linkSecurePay = DriverContext.Driver.findElement(By.xpath("*//a[@href='"+ searchResultsLink + "']"));
+            linkSecurePay.click();
+
+            //Now look for some element on the page to make sure
+            //we are on the right page
+            PageDelayUtils.WaitObjectExists(10000,By.id("search-label"));
 
         }
         catch (Exception ex)

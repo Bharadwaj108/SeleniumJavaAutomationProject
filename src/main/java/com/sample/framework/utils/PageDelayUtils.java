@@ -19,7 +19,7 @@ public class PageDelayUtils {
         WebElement webElement = null;
         Wait<WebDriver> wait = new FluentWait<WebDriver>(DriverContext.Driver)
                 .withTimeout(Duration.ofSeconds(maxWaitTimeInSeconds))
-                .pollingEvery(Duration.ofSeconds(5))
+                .pollingEvery(Duration.ofSeconds(2))
                 .ignoring(NoSuchElementException.class);
         Function<WebDriver,Boolean> function = new Function<WebDriver, Boolean>() {
             public Boolean apply(WebDriver driver) {

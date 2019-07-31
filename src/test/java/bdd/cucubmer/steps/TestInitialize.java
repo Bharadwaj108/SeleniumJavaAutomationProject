@@ -16,7 +16,7 @@ public class TestInitialize extends FrameworkInitialize {
     public void InitializeTests() throws IOException {
         ConfigReader.PopulateProjectSettings();
         InitBrowser(Settings.getWebBrowser());
-        DriverContext.WebBrowser.GoToURL(Settings.getAuthUrl());
+        //DriverContext.WebBrowser.GoToURL(Settings.getAuthUrl());
         //PageDelayUtils.WaitObjectExists(10, By.xpath("/html/body/div[1]/form[1]/button"));
     }
 
@@ -25,7 +25,7 @@ public class TestInitialize extends FrameworkInitialize {
         ConfigReader.PopulateProjectSettings();
         InitBrowser(Settings.getWebBrowser());
         //DriverContext.WebBrowser.GoToURL(Settings.getAuthUrl());
-        PageDelayUtils.WaitObjectExists(10, By.xpath("/html/body/div[1]/form[1]/button"));
+        //PageDelayUtils.WaitObjectExists(10, By.xpath("/html/body/div[1]/form[1]/button"));
     }
 
     @After
